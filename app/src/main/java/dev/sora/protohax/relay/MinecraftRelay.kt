@@ -1,6 +1,7 @@
 package dev.sora.protohax.relay
 
 import dev.sora.protohax.MyApplication
+import dev.sora.protohax.relay.modules.ModuleBaseFinder
 import dev.sora.protohax.relay.modules.ModuleESP
 import dev.sora.protohax.relay.netty.channel.NativeRakConfig
 import dev.sora.protohax.relay.netty.channel.NativeRakServerChannel
@@ -77,6 +78,7 @@ object MinecraftRelay {
 
     private fun registerAdditionalModules(moduleManager: ModuleManager) {
 		moduleManager.registerModule(ModuleESP())
+		moduleManager.registerModule(ModuleBaseFinder())
 	}
 
     private fun constructRelay(): Relay {
